@@ -1,0 +1,62 @@
+<!--Login Wrapper-->
+<!--Coming Soon-->
+<div class="loginone-wrapper lockscreen-wrapper bg-sc d-flex align-items-center justify-content-center">
+  <div class="coming-soon-wrapper text-center pt-lg-5">
+    <div class="mb-5">
+      <div class="row" >
+        <div class="col responsive-login-panel" >
+          <div class="login-inner-wrapper-2 shadow-box p-4">
+            <div style="background: white">
+              <div class="logo-sign">
+                <img src="assets/img/img-removebg-preview.png" alt="" style="width: 17rem;">
+              </div>
+
+            </div>
+            <hr class="new1">
+            <div class="mb-4">
+              <p class="text-muted font-weight-bold mb-0 letter-space-1">{{'Welcome To Chankya'}}</p>
+              <h2 style="color: #2c3254 !important;" class="text-primary font-weight-normal">{{'Sign into your account'}}</h2>
+            </div>
+
+            <form class="login-form" [formGroup]="loginForm">
+              <div>
+                <div class="alert alert-danger" *ngIf="authenticationError">
+                  <strong>{{'ERROR-MESSAGE1' }}</strong> {{'ERROR-MESSAGE2' }}
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control session-input-font input-square" placeholder="Login" formControlName="username" required>
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control session-input-font input-square" name="password" placeholder="Password" formControlName="password" required>
+              </div>
+              <div class="login-meta mb-3">
+                <div class="row">
+                  <div class="col-12 col-sm-6 col-md-6">
+                    <div class="custom-control custom-checkbox">
+                      <label class="mb-2 mr-sm-2 mb-sm-0 d-flex">
+                        <input class="custom-control-input ng-untouched ng-pristine ng-valid" type="checkbox" id="login-remember" formControlName="rememberMe">
+                        <span class="custom-control-label"></span>
+                        <span class="custom-control-description d-inline-block align-text-top">{{'Remember Me'}}</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-6 text-left text-sm-right">
+                    <a routerLink="/session/forgot-password" class="text-muted">{{'Forgot Password'}}</a>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" style="background-color: #009cea;border-color: #009cea;border-radius: 5px;" (click)="login()" class="btn btn-primary btn-block btn-lg btn-square">{{'LOGIN' }}</button>
+            </form>
+            <div class="logo-sign" >
+              <img src="assets/img/img-removebg-preview.png" alt="" style="width: 15rem;">
+            </div>
+          </div>
+        </div>
+        <div class="col responsive-left-image" >
+          <img style="width: 30rem;" src="assets/img/shopping.png" alt="image-news" >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

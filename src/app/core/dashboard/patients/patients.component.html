@@ -1,0 +1,54 @@
+<div>
+  <mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="situation">
+      <mat-header-cell *matHeaderCellDef> Situation </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <div style="margin-left: 20px; height: 20px; width: 20px; border-radius: 10px;" [ngStyle]="{'background-color': element.situation}"> </div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="examination">
+      <mat-header-cell *matHeaderCellDef>Examination </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.examination }} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="desease">
+      <mat-header-cell *matHeaderCellDef> Maladie </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.desease}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="recovery">
+      <mat-header-cell *matHeaderCellDef> Guérison
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-progress-bar mode="determinate" value={{element.recovery}} style="width: 80% !important;">
+        </mat-progress-bar>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="tests">
+      <mat-header-cell *matHeaderCellDef> Tests </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <circle-progress [percent]=element.tests [radius]="15" [outerStrokeWidth]="2" [innerStrokeWidth]="8"
+          [outerStrokeColor]="'#0275d8'" [innerStrokeColor]="'#0274d827'" [animation]="true" [animationDuration]="100"
+          [showSubtitle]="false" [titleFontSize]="'10'" [backgroundStrokeWidth]="0"></circle-progress>
+
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

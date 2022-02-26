@@ -1,0 +1,14 @@
+.list-items{
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #212529;
+    text-decoration: none;
+    background-color: #fff;
+  
+ }   
+ .active {
+     background-color: #0275d8;
+    color: #ffff !important;
+  }
+ @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';

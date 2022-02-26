@@ -1,0 +1,15 @@
+
+
+ <h4 style="font-family: cursive; color: #0275d8; padding-left: 27px; padding-top: 5px;">Dr echanguel</h4>
+
+<div style="margin-top: 20px;" >
+    <ul *ngFor="let item of menuItems; let index = index" class="list-group" style="margin-top: 1px; border: none!important;">
+        <!-- <li class="list-items" routerLinkActive="active-link">
+              <a [routerLink]="['/'+item.path]" class="btn" style=" padding: 1px 10px; color: #0275d8 ;"> <i class="{{item.icon}}"></i> {{item.item}}</a>
+         </li> -->
+        <li class="list-items"  >
+          <a class="btn" routerLinkActive="active" [routerLink]="['/'+item.path]" style="color: #0275d8; width: 100%; text-align: left;" > <i class="{{item.icon}}"></i> {{item.item}}</a>
+        </li>
+      </ul>
+</div>
+

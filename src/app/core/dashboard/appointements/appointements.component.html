@@ -1,0 +1,34 @@
+<div style="margin-top: 20px;">
+
+    <h6 style="margin-bottom: 20px; margin-left: 5px; font-size: large;">Mes Rendez-vous</h6>
+    <div class="row" >
+       
+            <div (click)="loadAppointments(index)" class="col-3 btn"  *ngFor="let day of days; let index= index" 
+            style="margin-left: 15px; padding: 0px; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.178); " 
+            [ngStyle]="{'background-color': selected === day.day ? '#0275d8' : '#ffff' }">
+            <div>
+                <strong style="color: #ffff; font-size: x-large;" [ngStyle]="{'color': selected === day.day ? '#ffff' : '#0275d8' }" > {{day.dayNumber}}</strong> 
+                <hr style="margin: 10px;">
+                 <p style="font-size: small; color: rgba(255, 255, 255, 0.432);" [ngStyle]="{'color': selected === day.day ? '#ffff' : '#0275d8' }">{{day.day}}</p> 
+            </div>
+            
+            </div>
+       
+    </div>
+<div style="margin-top: 10px;">
+    <li>Consultation "nom client" <a style="color: #0275d8; padding: 0px; margin-bottom: 5px; margin-left: 20px;"
+         class="btn" href="">Voir plus 
+        <i style="margin-left: 10px; margin-top: 10px !important;" class="fa fa-angle-right fa-sm"></i> </a>
+    </li>
+    <div style="margin-left: 20px;">
+        <p style="color: rgba(0, 0, 0, 0.329);">02:00 PM - 02:30 PM</p>
+        
+    </div>
+    <div style="margin-left: 20px;">
+        <p >Note : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates omnis dolore commodi ab obcaecati ex tenetur natus beatae sint debitis magni, labore aut quasi accusantium. Ratione esse earum facere expedita?</p>
+        
+    </div>
+</div>
+    
+
+</div>

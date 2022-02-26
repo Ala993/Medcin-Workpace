@@ -1,0 +1,43 @@
+<mat-sidenav-container autosize style="position: absolute;right: 0px;left: 0px;bottom: 0px;top: 0px;">
+  <mat-sidenav-content style="background-color: #f1f4f8;;">
+    <div style="  display:flex; ">
+      <a class="btn" style="color: #0275d8; padding-top: 10px;" mat-raised-button (click)="openeSideNav = !openeSideNav"><i
+          class="fa fa-bars fa-lg"></i></a>
+      <p
+        style="background-color: #ffff;margin-left: 10px;  margin-top: 7px; border-radius: 10px; padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px; display: flex;">
+        {{date | date: "medium"}}
+      </p>
+
+      <div style="margin-right: 20px; padding-top: 7px; float: inline-end; margin-left: auto; margin-right: 40px;">
+
+        <a  style="background-color: #ffff; border-radius: 70px; margin-left: 10px;  padding: 3px 6px;  float: right; color: #0275d8;" class="btn " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-house-user"></i>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" >Mon profil</a></li>
+          <li><a class="dropdown-item"  (click)="logout()"> Se deconnecté</a></li>
+        </ul>
+        <a class="btn"
+          style="background-color: #ffff; border-radius: 70px; margin-left: 10px;  padding: 3px 6px;  float: right;color: #0275d8;">
+          <strong><i  matBadge="4" matBadgeColor="warn" matBadgeSize="small" class="material-icons">email</i></strong> </a>
+
+        <a class="btn"
+          style="background-color: #ffff; border-radius: 70px; margin-left: 10px;  padding: 3px 6px;  float: right; color: #0275d8;">
+          <strong> <i matBadge="7" matBadgeColor="warn" matBadgeSize="small" class="material-icons">notifications</i></strong> </a>
+
+         
+            
+         
+      </div>
+
+    </div>
+    <div style="margin-top: 50px; margin-left: 40px;margin-right: 40px">
+      <router-outlet></router-outlet>
+    </div>
+    
+  </mat-sidenav-content>
+  
+  <mat-sidenav #drawer mode="side" [opened]="openeSideNav" style=" width: 200px; ">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+</mat-sidenav-container>

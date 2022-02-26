@@ -1,0 +1,62 @@
+<div class="row" style="margin-bottom: 30px;">
+  <div class="col-10">
+
+  </div>
+  <div class="col-2">
+
+    <button class="btn btn-success" style="float: right;" [routerLink]="['/patients/detailsPatient']">Créer un patient
+    </button>
+  </div>
+
+</div>
+
+
+
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef> Prénom </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="birthDate">
+      <mat-header-cell *matHeaderCellDef> Date de naissance </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.birthDate | date: "yyyy/dd/MM"}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef> Addresse </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef> Addresse </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <i (click)="deletePatient(element)" style="padding: 0px; margin-left: 10px; color: red;"
+          class="material-icons btn">delete</i>
+        <i [routerLink]="['/patients/editPatient/'+element.id]" style="padding: 0px;margin-left: 10px; color: #0275d8;" class="material-icons btn">edit</i>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

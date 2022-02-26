@@ -1,0 +1,56 @@
+<div class="container" style="text-align: center; ">
+  <form class="example-form">
+   
+  
+   
+  </form>
+    <form style=" display: inline-block; background-color: #ffff; width: 500px; padding: 40px; border-radius: 10px;">
+      <div style="margin: auto ;">
+        <h2 style="color: #0275d8;">{{ 'Patient'  }}</h2>
+      </div>
+      <div class="formStyle">
+        <br> 
+        <div class="form-group">
+          <mat-form-field style="width: 100%;"  appearance="fill">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="Nom" value="" name="name" [(ngModel)]="patient.firstName">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field style="width: 100%;"  appearance="fill">
+            <mat-label>Prénom</mat-label>
+            <input matInput placeholder="Prénom" value="" name="lastName" [(ngModel)]="patient.lastName">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field style="width: 100%;"  appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="email" value="" name="email" [(ngModel)]="patient.email">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field style="width: 100%;" appearance="fill">
+            <mat-label>Date de naissance</mat-label>
+            <input matInput [matDatepicker]="picker"  name="birthDate" [(ngModel)]="patient.birthDate">
+            <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field style="width: 100%;"  appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="address" value="" name="address" [(ngModel)]="patient.address">
+          </mat-form-field>
+          </div>
+        <br>
+        <br>
+        <br>
+        <button class="btn btn-secondary" [routerLink]="['/patients']" type="button">
+          <i class="fa fa-ban icons"></i> CANCEL 
+        </button>
+        <button class="btn btn-primary" style="margin-left: 10px;" type="button" (click)="submitAccount()">
+          <i class="icon-check icons"></i>SAVE</button>
+      </div>
+    </form>
+  </div>
+  
